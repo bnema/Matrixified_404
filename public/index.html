@@ -6,7 +6,8 @@
     <title>404 - Page not found</title>
     <!-- Tailwind css -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
           /* We want to use a Nerd Font for the symbols */
         @font-face {
@@ -33,7 +34,7 @@
         }
         .relative{
           display: flex;
-          position: absolute;
+          position: static;
           align-items: center;
           justify-content: center;
           min-height: 100vh;
@@ -79,8 +80,9 @@
     
     <div class="relative">
       <!-- transform the h1 to a button so its clickable -->
-      <h1 class="text-center text-white"><a href="#" class="clickable">404 </a></h1>
-   </div>
+
+    <h1 class="text-center text-white"><a href="#" class="clickable">404 </a></h1>
+
     <script>
         // Function to generate a random number within a range
         function getRandomInt(min, max) {
