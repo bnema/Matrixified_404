@@ -76,7 +76,6 @@
     </style>
   </head>
   <body class="bg-black">
-    
     <div class="relative">
       <!-- Add a button to the h1 to make it interactive even on mobile -->
     <!-- <h1 class="text-center text-white"><a href="#" class="clickable">404 </a></h1> -->
@@ -90,7 +89,6 @@
     // Function to pick a random color in #RRGGBB format
     function getRandomColor() {
       return "#" + Math.floor(Math.random() * 16777215).toString(16);
-
     }
     // Random interval between 50ms and 1000ms
     function getRandomInterval() {
@@ -105,21 +103,17 @@
       // Create a new span element
       var char = document.createElement("span");
       char.classList.add("matrix-char");
-
       // If font used is a nerd font, set innerHTML to a random symbol or icon from nerd font (ex : ea9d for vim) if font used is not a nerd font, set innerHTML to a random UTF-8 symbol or other type than latin
       if (document.fonts.check("10px 'JetBrains Mono Nerd Font'")) {
         var characters = char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
       } else {
         var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
       }
-      
       // Set a random font size
         char.style.fontSize = getRandomInt(10, 40) + "px";
-      
       // Set a random position within the viewport
       char.style.left = getRandomInt(0, window.innerWidth) + "px";
       char.style.top = getRandomInt(0, window.innerHeight) + "px";
-
       // Set a random color
       char.style.color = getRandomColor();
       // Set a random opacity
@@ -143,7 +137,6 @@
       // breath animation with random timing
       breath.style.animation = 'breathing-animation ' + getRandomInt(5, 10) + 's linear infinite';
     }, getRandomInt(1000, 100000));
-
     // Limit the number of clicks to 1 per sec to avoid destroying the browser
     var clicks = 0;
     var button = document.querySelector('.clickable');
@@ -156,6 +149,11 @@
         // if mobile chill dude
         if (window.innerWidth < 768) {
           for (var i = 0; i < getRandomInt(10, 100); i++) {
+            createMatrixChar();
+          }
+        } else if (window.innerWidth < 1024) {
+          // if tablet then go easy
+          for (var i = 0; i < getRandomInt(50, 500); i++) {
             createMatrixChar();
           }
         } else {
