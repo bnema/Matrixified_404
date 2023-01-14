@@ -6,8 +6,7 @@
     <title>404 - Page not found</title>
     <!-- Tailwind css -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
           /* We want to use a Nerd Font for the symbols */
         @font-face {
@@ -37,9 +36,10 @@
           position: static;
           align-items: center;
           justify-content: center;
-          min-height: 100vh;
           width: 100%;
+          height: 100%;
         }
+
         .matrix-char {
           position: absolute;
           font-size: 20px;
@@ -146,9 +146,10 @@
           breath.style.animation = 'breathing-animation ' + getRandomInt(5, 10) + 's linear infinite';
         }, getRandomInt(1000, 100000));
 
-        // Click on h1 to create between 100 and 1000 matrix characters but set a delay (of the animation duration) to avoid spamming
+        // Click on h1 to create between 100 and 1000 matrix characters but set a delay to avoid spamming
+        // If touch screen, add event listener for touchstart, else add event listener for click
         var clickable = document.querySelector('.clickable');
-        clickable.addEventListener('click', function() {
+        clickable.addEventListener('touchstart', function() {
           for (var i = 0; i < getRandomInt(100, 1000); i++) {
             setTimeout(createMatrixChar, getRandomInt(1000, 5000));
           }
