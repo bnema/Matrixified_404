@@ -19,11 +19,11 @@ docker build -t matrixified-404 .
 
 - You can also deploy the project to Heroku by clicking the button below:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/?template=github.com/bnema/matrixified-404)
 
 ## Screenshot & Demo
 
-![Screenshot](https://raw.githubusercontent.com/bnema/matrixified-404/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/bnema/matrixified-404/main/screenshot.png)
 
 You can see a demo of the page on github pages: [https://bnema.github.io/matrixified-404/](https://bnema.github.io/matrixified-404/)
 
