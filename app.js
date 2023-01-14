@@ -12,6 +12,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
+// MAKE THE PUBLIC FOLDER PUBLIC
+
+app.use(express.static('public'));
+
+
+
 // Start express server
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
