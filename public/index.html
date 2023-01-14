@@ -107,11 +107,12 @@
       var char = document.createElement("span");
       char.classList.add("matrix-char");
       // If font used is a nerd font, set innerHTML to a random symbol or icon from nerd font (ex : ea9d for vim) if font used is not a nerd font, set innerHTML to a random UTF-8 symbol or other type than latin
-      if (document.fonts.check("10px 'JetBrains Mono Nerd Font'")) {
+      if (document.fonts.check("1px 'JetBrains Mono Nerd Font'")) {
         var characters = char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
       } else {
         var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
       }
+
       // Set a random font size
         char.style.fontSize = getRandomInt(10, 40) + "px";
       // Set a random position within the viewport
@@ -135,11 +136,14 @@
     setInterval(createMatrixChar, getRandomInterval());
     // Loop animation pulse on h1 
     var breath = document.querySelector('.clickable');
-    // Set a random interval between 1s and 100s for when a breathing happens
+    // breath animation with random timing but wait for the animation to finish before starting a new one
     setInterval(function() {
-      // breath animation with random timing
-      breath.style.animation = 'breathing-animation ' + getRandomInt(5, 10) + 's linear infinite';
-    }, getRandomInt(1000, 100000));
+    breath.addEventListener("animationend", function() {
+        setTimeout(function() {
+            breath.style.animation = 'breathing-animation ' + getRandomInt(5, 30) + 's linear infinite';
+        }, getRandomInt(5000, 10000));
+    });
+}, getRandomInt(5000, 100000));
     // Limit the number of clicks to 1 per sec to avoid destroying the browser
     var clicks = 0;
     var button = document.querySelector('.clickable');
