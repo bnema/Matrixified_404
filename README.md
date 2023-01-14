@@ -7,9 +7,9 @@ Is it mostly used as a quick deploy and placeholder for a website that is under 
 
   - Start a Express server on port 3000 or the port specified in the environment variable EXPRESS_PORT
   - Render a page with a cool matrix animation effect 
-  - By default, the page is rendered with JetBrains Mono Nerd font (for cool icons) but if you are limited to sans-serif fonts it will switch to classic UTF-8 symbols automatically
   - Relieve your frustration by spam clicking the 404 element
 
+the page is rendered with JetBrains Mono Nerd font (for cool icons) but if you are limited to a sans-serif font it will switch to classic UTF-8 symbols automatically
 ## Deploying
 
 - A Dockerfile is provided to build a Docker image.
