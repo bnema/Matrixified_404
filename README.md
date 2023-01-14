@@ -5,8 +5,9 @@ Is it mostly used as a quick deploy and placeholder for a website that is under 
 
 ## What it does
 
-1 - Start a Express server on port 3000 or the port specified in the environment variable EXPRESS_PORT
-2 - Render a 404 page with a cool matrix animation effect
+  - Start a Express server on port 3000 or the port specified in the environment variable EXPRESS_PORT
+  - Render a 404 page with a cool matrix animation effect
+
 
 ## Deploying
 
