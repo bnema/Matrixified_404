@@ -28,8 +28,8 @@ docker build -t matrixified-404 .
 ![Screenshot](https://raw.githubusercontent.com/bnema/Matrixified_404/main/screenshot.png)
 
 
-- You can see a demo using JetBrains Mono Nerd font (for cool icons) here : [https://404.bnema.dev/](https://404.bnema.dev/)
-- You can see a demo using the sans-serif alternative on github pages: [https://bnema.github.io/Matrixified_404/public/index.html](https://bnema.github.io/Matrixified_404/public/index.html)
+- You can see a demo using randomized JetBrains Mono Nerd font icons + Kakatana symbols here : [https://404.bnema.dev/](https://404.bnema.dev/)
+- You can see a demo using only Kakatana symbols alternative on github pages: [https://bnema.github.io/Matrixified_404/public/index.html](https://bnema.github.io/Matrixified_404/public/index.html)
 
 
 
