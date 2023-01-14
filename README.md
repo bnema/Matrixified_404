@@ -23,7 +23,7 @@ docker build -t matrixified-404 .
 
 ## Screenshot & Demo
 
-![Screenshot](https://raw.githubusercontent.com/bnema/matrixified-404/main/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/bnema/Matrixified_404/main/screenshot.png)
 
 You can see a demo of the page on github pages: [https://bnema.github.io/matrixified-404/](https://bnema.github.io/matrixified-404/)
 
