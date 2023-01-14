@@ -105,10 +105,14 @@
           // Create a new span element
           var char = document.createElement("span");
           char.classList.add("matrix-char");
-          // Set innerHTML to a random UTF-8 symbol or other type than latin
-          // var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
-          // Set innerHTML to a random symbol or icon from nerd font (ex : ea9d for vim)
-          var characters = char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
+
+          // If font used is a nerd font, set innerHTML to a random symbol or icon from nerd font (ex : ea9d for vim) if font used is not a nerd font, set innerHTML to a random UTF-8 symbol or other type than latin
+          if (document.fonts.check("10px 'JetBrains Mono Nerd Font'")) {
+            var characters = char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
+          } else {
+            var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
+          }
+          
           // Set a random font size
            char.style.fontSize = getRandomInt(10, 40) + "px";
           
