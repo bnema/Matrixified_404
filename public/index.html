@@ -106,22 +106,18 @@
     function createMatrixChar() {
       // Create a new span element
       var char = document.createElement("span");
+      var katanaSymbols = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
+      var nerdFontIcons = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
       var useKatakana = Math.random() > 0.5;
       char.classList.add("matrix-char");
-      char.classList.add("matrix-char");
-      // If font used is a nerd font, set innerHTML to a random symbol or icon from nerd font (ex : ea9d for vim) if font used is not a nerd font, set innerHTML to a random UTF-8 symbol or other type than latin
+      // Check if JetBrains Mono Nerd Font is loaded (Hello, GitHub Pages!)
       if (document.fonts.check("1px 'JetBrains Mono Nerd Font'")) {
-        var characters = char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
+        // if JetBrains Mono Nerd Font is available, use it and use katakana symbols 50% of the time
+        var characters = char.innerHTML = useKatakana ? katanaSymbols : nerdFontIcons;
       } else {
-        var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
+        // if JetBrains Mono Nerd Font is not available, use only katakana symbols
+        var characters = char.innerHTML = katanaSymbols;
       }
-      
-      if (useKatakana) {
-        char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
-      } else {
-        char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
-     }
-
       // Set a random font size
         char.style.fontSize = getRandomInt(10, 40) + "px";
       // Set a random position within the viewport
