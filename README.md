@@ -7,6 +7,7 @@ Is it mostly used as a quick deploy and placeholder for a website that is under 
 
   - Start a Express server on port 3000 or the port specified in the environment variable EXPRESS_PORT
   - Render a page with a cool matrix animation effect 
+  - By default, the page is rendered with JetBrains Mono Nerd font (for cool icons) but if you are limited to sans-serif fonts it will switch to classic UTF-8 symbols automatically
   - Relieve your frustration by spam clicking the 404 element
 
 ## Deploying
@@ -26,7 +27,10 @@ docker build -t matrixified-404 .
 
 ![Screenshot](https://raw.githubusercontent.com/bnema/Matrixified_404/main/screenshot.png)
 
-You can see a demo of the page on github pages: [https://bnema.github.io/Matrixified_404/public/index.html](https://bnema.github.io/Matrixified_404/public/index.html)
+
+- You can see a demo using JetBrains Mono Nerd font (for cool icons) here : [https://404.bnema.dev/](https://404.bnema.dev/)
+- You can see a demo using the sans-serif alternative on github pages: [https://bnema.github.io/Matrixified_404/public/index.html](https://bnema.github.io/Matrixified_404/public/index.html)
+
 
 
 ## Customizing
