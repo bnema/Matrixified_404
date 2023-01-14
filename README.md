@@ -6,8 +6,8 @@ Is it mostly used as a quick deploy and placeholder for a website that is under 
 ## What it does
 
   - Start a Express server on port 3000 or the port specified in the environment variable EXPRESS_PORT
-  - Render a 404 page with a cool matrix animation effect
-
+  - Render a page with a cool matrix animation effect 
+  - Relieve your frustration by spam clicking the 404 element
 
 ## Deploying
 
@@ -26,7 +26,7 @@ docker build -t matrixified-404 .
 
 ![Screenshot](https://raw.githubusercontent.com/bnema/Matrixified_404/main/screenshot.png)
 
-You can see a demo of the page on github pages: [https://bnema.github.io/matrixified-404/](https://bnema.github.io/matrixified-404/)
+You can see a demo of the page on github pages: [https://bnema.github.io/Matrixified_404/public/index.html](https://bnema.github.io/Matrixified_404/public/index.html)
 
 
 ## Customizing
