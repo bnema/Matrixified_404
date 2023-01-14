@@ -6,17 +6,23 @@
     <title>404 - Page not found</title>
     <!-- Tailwind css -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+>
     <style>
+          /* We want to use a Nerd Font for the symbols */
+        @font-face {
+          font-family: "JetBrains Mono Nerd Font";
+          src: local("JetBrains Mono Nerd Font"), url("/assets/JetBrainsMonoRegularNerdFontComplete.ttf") format("truetype");
+        }
+
         body{
             background-color: black;
             overflow:  hidden;
+               /* Use JetBrains Mono Nerd Font */
+            font-family: "JetBrains Mono Nerd Font";
         }
         /* h1 cool 404 */
         h1{
             font-size: 100px;
-            font-family: 'Orbitron','FontAwesome', sans-serif;
             font-weight: 900;
             z-index: 1;
         }
@@ -25,19 +31,19 @@
             text-decoration: none;
             color: rgba(255, 255, 255, 1);
         }
-.relative{
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  width: 100%;
-}
-.matrix-char {
-  position: absolute;
-  font-size: 20px;
-  animation: matrix-animation 1s linear infinite;
-}
+        .relative{
+          display: flex;
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          width: 100%;
+        }
+        .matrix-char {
+          position: absolute;
+          font-size: 20px;
+          animation: matrix-animation 1s linear infinite;
+        }
 
       @keyframes matrix-animation {
         0% {
@@ -73,8 +79,8 @@
     
     <div class="relative">
       <!-- transform the h1 to a button so its clickable -->
-      <h1 class="text-center text-white"><a href="#" class="clickable">404</a></h1>
-    </div>
+      <h1 class="text-center text-white"><a href="#" class="clickable">404 </a></h1>
+   </div>
     <script>
         // Function to generate a random number within a range
         function getRandomInt(min, max) {
@@ -100,7 +106,9 @@
           var char = document.createElement("span");
           char.classList.add("matrix-char");
           // Set innerHTML to a random UTF-8 symbol or other type than latin
-          var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
+          // var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
+          // Set innerHTML to a random symbol or icon from nerd font (ex : ea9d for vim)
+          var characters = char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
           // Set a random font size
            char.style.fontSize = getRandomInt(10, 40) + "px";
           
