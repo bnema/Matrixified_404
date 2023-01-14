@@ -85,13 +85,7 @@
     <button class="clickable text-center text-white"><h1>404</h1></button>
 
     <script>
-      // In case the font is not loaded yet, load it and add it to the document (Hi Github Pages)
-    let font = new FontFace('JetBrains Mono Nerd Font', 'url(/assets/JetBrainsMonoRegularNerdFontComplete.ttf)');
-    font.load().then(function(loaded_face) {
-      document.fonts.add(loaded_face);
-    }).catch(function(error) {
-      console.log(error);
-    });
+     
     // Function to generate a random number within a range
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
@@ -114,6 +108,14 @@
       var char = document.createElement("span");
       var useKatakana = Math.random() > 0.5;
       char.classList.add("matrix-char");
+      char.classList.add("matrix-char");
+      // If font used is a nerd font, set innerHTML to a random symbol or icon from nerd font (ex : ea9d for vim) if font used is not a nerd font, set innerHTML to a random UTF-8 symbol or other type than latin
+      if (document.fonts.check("1px 'JetBrains Mono Nerd Font'")) {
+        var characters = char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
+      } else {
+        var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
+      }
+      
       if (useKatakana) {
         char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
       } else {
