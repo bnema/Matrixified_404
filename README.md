@@ -1,50 +1,49 @@
-# Matrixified 404
-This is a simple Express server who render a 404 page with cool matrix (revisited) effect
+# Nerd Digital Rain Effect - 404 Page 
 
-Is it mostly used as a quick deploy and placeholder for a website that is under construction.
+[![GitHub license](https://img.shields.io/github/license/bnema/nerd-digital-rain-404)](
+This is a simple Express server that renders a 404 page with a cool "matrix-like" revisited effect using JetBrains Mono Nerd Font and Kakatana symbols.
+
+It is mostly used as a quick deploy and placeholder for a website that is under construction.
 
 ## What it does
 
-  - Start a Express server on port 3000 or the port specified in the environment variable EXPRESS_PORT
-  - Render a page with a cool matrix animation effect 
-  - Relieve your frustration by spam clicking the 404 element
+- Starts an Express server on port 3000 or the port specified in the environment - variable EXPRESS_PORT
+- Renders a page with a cool matrix animation effect
+- Allows you to relieve your frustration by spam clicking the 404 element
 
-the page is rendered with JetBrains Mono Nerd font (for cool icons) but if you are limited to a sans-serif font it will switch to classic UTF-8 symbols automatically
+By default, the page is rendered with JetBrains Mono Nerd Font (stored in assets) for the cool icons and also uses Kakatana symbols (from any UTF-8 font) to stay true to the matrix theme. 
+In case JetBrains Mono Nerd Font is not installed on the client or cannot be loaded, the page will fallback to Kakatana symbols only (like on GitHub Pages).
 ## Deploying
 
-- A Dockerfile is provided to build a Docker image.
-
-To build the image, clone the repository and run the following command:
+- A Dockerfile is provided to build a Docker image. To build the image, clone the repository and run the following command:
 ```bash
-docker build -t matrixified-404 .
+docker build -t nerd-digital-rain-404 .
 ```
 
 - You can also deploy the project to Heroku by clicking the button below:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/?template=github.com/bnema/matrixified-404)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/?template=github.com/bnema/nerd-digital-rain-404)
 
 ## Screenshot & Demo
 
-![Screenshot](https://raw.githubusercontent.com/bnema/Matrixified_404/main/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/bnema/nerd-digital-rain-404/main/public/assets/screenshot.png)
 
 
 - You can see a demo using randomized JetBrains Mono Nerd font icons + Kakatana symbols here : [https://404.bnema.dev/](https://404.bnema.dev/)
-- You can see a demo using only Kakatana symbols alternative on github pages: [https://bnema.github.io/Matrixified_404/public/index.html](https://bnema.github.io/Matrixified_404/public/index.html)
+- You can see a demo using only Kakatana symbols alternative on GitHub Pages : [https://bnema.github.io/nerd-digital-rain-404/public/index.html](https://bnema.github.io/nerd-digital-rain-404/public/index.html)
 
 
 
 ## Customizing
 
-You can customize the animation by modifying the JavaScript code and the CSS styles. For example, you can change the duration and delay of the animation, or the colors and fonts used.
+For easier deploying or needs, the entire html, css and js code are in one document (index.html) and can be easily modified to suit your needs.
 
 ## License
 
-This project is licensed under the Apache 2.0 License.
+This project is licensed under the Apache 2.0 License. The original matrix effect, also known as "Matrix digital rain" or "Matrix code," was popularized by the 1999 science fiction film "The Matrix" directed by the Wachowski siblings and created by visual effects supervisor John Gaeta and his team at Manex Visual Effects. 
+
+My additions such as animation font variant, icons and color scheme are original works created by me, and not associated with the original matrix effect. If anyone wishes to use this idea, please credit me and link to this repository.
 
 ## Author
 
 This project is created by [bnema](https://github.com/bnema)
-
-## Note
-
-This 404 page is not compatible with Internet explorer.
