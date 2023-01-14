@@ -1,7 +1,8 @@
 # Nerd Digital Rain Effect - 404 Page 
 
-[![GitHub license](https://img.shields.io/github/license/bnema/nerd-digital-rain-404)](
-This is a simple Express server that renders a 404 page with a cool "matrix-like" revisited effect using JetBrains Mono Nerd Font and Kakatana symbols.
+![GitHub license](https://img.shields.io/github/license/bnema/nerd-digital-rain-404)
+
+This is a simple Express server that renders a 404 page with a revisited version of the iconic "Matrix code" using Nerd Font icons and Kakatana symbols.
 
 It is mostly used as a quick deploy and placeholder for a website that is under construction.
 
@@ -19,7 +20,6 @@ In case JetBrains Mono Nerd Font is not installed on the client or cannot be loa
 ```bash
 docker build -t nerd-digital-rain-404 .
 ```
-
 - You can also deploy the project to Heroku by clicking the button below:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/?template=github.com/bnema/nerd-digital-rain-404)
@@ -28,11 +28,8 @@ docker build -t nerd-digital-rain-404 .
 
 ![Screenshot](https://raw.githubusercontent.com/bnema/nerd-digital-rain-404/main/public/assets/screenshot.png)
 
-
 - You can see a demo using randomized JetBrains Mono Nerd font icons + Kakatana symbols here : [https://404.bnema.dev/](https://404.bnema.dev/)
 - You can see a demo using only Kakatana symbols alternative on GitHub Pages : [https://bnema.github.io/nerd-digital-rain-404/public/index.html](https://bnema.github.io/nerd-digital-rain-404/public/index.html)
-
-
 
 ## Customizing
 
@@ -40,9 +37,7 @@ For easier deploying or needs, the entire html, css and js code are in one docum
 
 ## License
 
-This project is licensed under the Apache 2.0 License. The original matrix effect, also known as "Matrix digital rain" or "Matrix code," was popularized by the 1999 science fiction film "The Matrix" directed by the Wachowski siblings and created by visual effects supervisor John Gaeta and his team at Manex Visual Effects. 
-
-My additions such as animation font variant, icons and color scheme are original works created by me, and not associated with the original matrix effect. If anyone wishes to use this idea, please credit me and link to this repository.
+This project is licensed under the Apache 2.0 License. The inspiration for this project comes from the iconic "Matrix code" effect popularized by the 1999 science fiction film "The Matrix" directed by the Wachowski siblings and created by visual effects supervisor John Gaeta and his team at Manex Visual Effects. However, my additions such as animation font variant, icons and color scheme are original works created by me, and not associated with the original matrix effect. If anyone wishes to use this idea, please credit me and link to this repository.
 
 ## Author
 
