@@ -80,7 +80,7 @@
   </head>
   <body class="bg-black">
     <div class="relative">
-      <!-- Add a button to the h1 to make it interactive even on mobile -->
+    <!-- Add a button to the h1 to make it more interactive even on mobile -->
     <!-- <h1 class="text-center text-white"><a href="#" class="clickable">404 </a></h1> -->
     <button class="clickable text-center text-white"><h1>404</h1></button>
 
@@ -105,13 +105,13 @@
     function createMatrixChar() {
       // Create a new span element
       var char = document.createElement("span");
+      var useKatakana = Math.random() > 0.5;
       char.classList.add("matrix-char");
-      // If font used is a nerd font, set innerHTML to a random symbol or icon from nerd font (ex : ea9d for vim) if font used is not a nerd font, set innerHTML to a random UTF-8 symbol or other type than latin
-      if (document.fonts.check("1px 'JetBrains Mono Nerd Font'")) {
-        var characters = char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
+      if (useKatakana) {
+        char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
       } else {
-        var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
-      }
+        char.innerHTML = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
+     }
 
       // Set a random font size
         char.style.fontSize = getRandomInt(10, 40) + "px";
@@ -148,6 +148,7 @@
     var clicks = 0;
     var button = document.querySelector('.clickable');
     button.addEventListener('click', function() {
+      // On click inject a random number of matrix characters depending on the screen size
       clicks++;
       if (clicks === 1) {
         setTimeout(function() {
@@ -157,11 +158,13 @@
         if (window.innerWidth < 768) {
           for (var i = 0; i < getRandomInt(10, 100); i++) {
             createMatrixChar();
+          
           }
         } else if (window.innerWidth < 1024) {
           // if tablet then go easy
           for (var i = 0; i < getRandomInt(50, 500); i++) {
             createMatrixChar();
+            
           }
         } else {
           // if desktop then go banana
