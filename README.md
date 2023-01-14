@@ -1,9 +1,7 @@
 # Matrixified 404
 This is a simple Express server who render a 404 page with cool matrix (revisited) effect
 
-It is mostly used as a quick deploy and placeholder for a website that is under construction.
-
-This is a simple Express server that serves a 404 error page that features a cool matrix animation effect, built with HTML, CSS, and JavaScript. It uses [Tailwind CSS](https://tailwindcss.com/) for styling and [Font Awesome](https://fontawesome.com/) as default icon font.
+Is it mostly used as a quick deploy and placeholder for a website that is under construction.
 
 ## What it does
 
@@ -22,6 +20,12 @@ docker build -t matrixified-404 .
 - You can also deploy the project to Heroku by clicking the button below:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+## Screenshot & Demo
+
+![Screenshot](https://raw.githubusercontent.com/bnema/matrixified-404/master/screenshot.png)
+
+You can see a demo of the page on github pages: [https://bnema.github.io/matrixified-404/](https://bnema.github.io/matrixified-404/)
 
 
 ## Customizing
