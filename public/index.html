@@ -4,11 +4,9 @@
   <html>
   <head>
     <title>404 - Page not found</title>
-    <!-- Tailwind css -->
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-          /* We want to use a Nerd Font for the symbols */
+          /* Nerd Font for the symbols */
         @font-face {
           font-family: "JetBrains Mono Nerd Font";
           src: local("JetBrains Mono Nerd Font"), url("/assets/JetBrainsMonoRegularNerdFontComplete.ttf") format("truetype");
@@ -27,9 +25,14 @@
             z-index: 1;
         }
         /* no decoration on h1's link */
-        h1 a{
+        button{
             text-decoration: none;
             color: rgba(255, 255, 255, 1);
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            z-index: 1;
         }
         .relative{
           display: flex;
@@ -59,7 +62,6 @@
           opacity: 0;
         }
       }
-
       @keyframes breathing-animation {
         0% {
           opacity: 1;
@@ -71,17 +73,15 @@
           opacity: 1;
         }
       }
-      
-
 
     </style>
   </head>
   <body class="bg-black">
     
     <div class="relative">
-      <!-- transform the h1 to a button so its clickable -->
-
-    <h1 class="text-center text-white"><a href="#" class="clickable">404 </a></h1>
+      <!-- Add a button to the h1 to make it clickable -->
+    <!-- <h1 class="text-center text-white"><a href="#" class="clickable">404 </a></h1> -->
+    <button class="clickable text-center text-white"><h1>404</h1></button>
 
     <script>
         // Function to generate a random number within a range
@@ -146,12 +146,26 @@
           breath.style.animation = 'breathing-animation ' + getRandomInt(5, 10) + 's linear infinite';
         }, getRandomInt(1000, 100000));
 
-        // Click on h1 to create between 100 and 1000 matrix characters but set a delay to avoid spamming
-        // If touch screen, add event listener for touchstart, else add event listener for click
-        var clickable = document.querySelector('.clickable');
-        clickable.addEventListener('touchstart', function() {
-          for (var i = 0; i < getRandomInt(100, 1000); i++) {
-            setTimeout(createMatrixChar, getRandomInt(1000, 5000));
+       // Limit the number of clicks to 1 per sec to avoid destroying the browser
+        var clicks = 0;
+        var button = document.querySelector('.clickable');
+        button.addEventListener('click', function() {
+          clicks++;
+          if (clicks === 1) {
+            setTimeout(function() {
+              clicks = 0;
+            }, 1000);
+            // if mobile chill dude
+            if (window.innerWidth < 768) {
+              for (var i = 0; i < getRandomInt(10, 100); i++) {
+                createMatrixChar();
+              }
+            } else {
+              // if desktop then go banana
+              for (var i = 0; i < getRandomInt(100, 10000); i++) {
+                createMatrixChar();
+              }
+            }
           }
         });
       </script>
