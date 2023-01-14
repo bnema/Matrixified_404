@@ -1,0 +1,144 @@
+<!-- Author : https://github.com/bnema -->
+<!-- License : Apache 2.0 -->
+<!-- Description : 404 page with matrix effect -->
+  <html>
+  <head>
+    <title>404 - Page not found</title>
+    <!-- Tailwind css -->
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: black;
+            overflow:  hidden;
+        }
+        /* h1 cool 404 */
+        h1{
+            font-size: 100px;
+            font-family: 'Orbitron','FontAwesome', sans-serif;
+            font-weight: 900;
+            z-index: 1;
+        }
+        /* no decoration on h1's link */
+        h1 a{
+            text-decoration: none;
+            color: rgba(255, 255, 255, 1);
+        }
+.relative{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+.matrix-char {
+  position: absolute;
+  font-size: 20px;
+  animation: matrix-animation 1s linear infinite;
+}
+
+      @keyframes matrix-animation {
+        0% {
+          transform: translateY(0);
+          opacity: 0;
+        }
+        5% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+      }
+
+      @keyframes breathing-animation {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
+
+
+    </style>
+  </head>
+  <body class="bg-black">
+    
+    <div class="relative">
+      <!-- transform the h1 to a button so its clickable -->
+      <h1 class="text-center text-white"><a href="#" class="clickable">404</a></h1>
+    </div>
+    <script>
+        // Function to generate a random number within a range
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+       // Function to pick a random color in #RRGGBB format
+          function getRandomColor() {
+           return "#" + Math.floor(Math.random() * 16777215).toString(16);
+  
+          }
+        // Random interval between 50ms and 1000ms
+          function getRandomInterval() {
+            return Math.random() * (10 - 50);
+          }
+  
+        //Function to randomize opacity from 0.1 to 1
+          function getRandomOpacity() {
+            return Math.random() * (1 - 0.1) + 0.1;
+          }
+        // Function to create and position a matrix character
+        function createMatrixChar() {
+          // Create a new span element
+          var char = document.createElement("span");
+          char.classList.add("matrix-char");
+          // Set innerHTML to a random UTF-8 symbol or other type than latin
+          var characters = char.innerHTML = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
+          // Set a random font size
+           char.style.fontSize = getRandomInt(10, 40) + "px";
+          
+          // Set a random position within the viewport
+          char.style.left = getRandomInt(0, window.innerWidth) + "px";
+          char.style.top = getRandomInt(0, window.innerHeight) + "px";
+  
+          // Set a random color
+          char.style.color = getRandomColor();
+          // Set a random opacity
+          char.style.opacity = getRandomOpacity();
+          // Random flip the character
+           char.style.transform = "scaleX(" + (Math.random() > 0.5 ? 1 : -1) + ")";
+          // Append the character to the body
+
+          document.body.appendChild(char);
+          // Remove the character after 50ms to 500ms
+            setTimeout(function() {
+                document.body.removeChild(char);
+            }, getRandomInt(1000, 5000));
+        }
+        // random set interval
+        setInterval(createMatrixChar, getRandomInterval());
+        // Loop animation pulse on h1 
+        var breath = document.querySelector('.clickable');
+        // set interval to 1s
+        setInterval(function() {
+          // breath animation with random timing
+          breath.style.animation = 'breathing-animation ' + getRandomInt(5, 10) + 's linear infinite';
+        }, getRandomInt(1000, 100000));
+
+        // Click on h1 to create between 100 and 1000 matrix characters but set a delay (of the animation duration) to avoid spamming
+        var clickable = document.querySelector('.clickable');
+        clickable.addEventListener('click', function() {
+          for (var i = 0; i < getRandomInt(100, 1000); i++) {
+            setTimeout(createMatrixChar, getRandomInt(1000, 5000));
+          }
+        });
+      </script>
+  </body>
+</html>

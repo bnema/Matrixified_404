@@ -1,0 +1,6 @@
+.env
+node_modules/
+.vscode/
+.dockerignore
+Dockerfile
+.eslintrc.yml
