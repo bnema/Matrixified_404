@@ -109,13 +109,25 @@
       var katanaSymbols = String.fromCharCode(getRandomInt(0x30A0, 0x30FF));
       var nerdFontIconsLimited = String.fromCharCode(getRandomInt(0xea80, 0xeaff));
       var nerdFontIconsWithBrand = String.fromCharCode(getRandomInt(0xf000, 0xf2e0));
-      var nerdFontIconsBitOfEverything= String.fromCharCode(getRandomInt(0x27F7, 0x30));
+      var nerdFontAllIconsWithoutUndefinedChars = String.fromCharCode(getRandomInt(0x1f000, 0x1f9ff));
+
+      
       var useKatakana = Math.random() > 0.5;
       char.classList.add("matrix-char");
       // Check if JetBrains Mono Nerd Font is loaded (Hello, GitHub Pages!)
       if (document.fonts.check("1px 'JetBrains Mono Nerd Font'")) {
         // use the 3 different sets of symbols depending on the random value of useKatakana
-        var characters = char.innerHTML = useKatakana ? katanaSymbols : nerdFontIconsLimited, nerdFontIconsWithBrand, nerdFontIconsBitOfEverything;
+        var fontIcons = [ nerdFontIconsLimited, nerdFontIconsWithBrand, nerdFontAllIconsWithoutUndefinedChars];
+        var randomFont = fontIcons[Math.floor(Math.random() * fontIcons.length)];
+        // check if the random font is not a undefined character (0x25AF, 0x25B0, 0x25A1, 0xEF, 0xBF, 0xBD, 0xFFFD)
+        var undefinedChars = [0x25AF, 0x25B0, 0x25A1, 0xEF, 0xBF, 0xBD, 0xFFFD, 0x1F385, 0xF385,0x8E,0x85];
+        if (undefinedChars.includes(randomFont.charCodeAt(0))) {
+          // Skip the character from being added to the body
+          return;
+        } else {
+          var characters = char.innerHTML = useKatakana ? katanaSymbols : randomFont;
+        }
+        
       } else {
         // if JetBrains Mono Nerd Font is not available, use only katakana symbols
         var characters = char.innerHTML = katanaSymbols;
