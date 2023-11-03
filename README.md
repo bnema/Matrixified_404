@@ -20,16 +20,11 @@ In case JetBrains Mono Nerd Font is not installed on the client or cannot be loa
 ```bash
 docker build -t nerd-digital-rain-404 .
 ```
-- You can also deploy the project to Heroku by clicking the button below:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/?template=github.com/bnema/nerd-digital-rain-404)
-
 ## Screenshot & Demo
 
 ![Screenshot](https://raw.githubusercontent.com/bnema/nerd-digital-rain-404/main/public/assets/screenshot.png)
 
-- You can see a demo using randomized JetBrains Mono Nerd font icons + Kakatana symbols here : [https://404.bnema.dev/](https://404.bnema.dev/)
-- You can see a demo using only Kakatana symbols alternative on GitHub Pages : [https://bnema.github.io/nerd-digital-rain-404/public/index.html](https://bnema.github.io/nerd-digital-rain-404/public/index.html)
+- You can see a demo using only Kakatana symbols on GitHub Pages : [https://bnema.github.io/nerd-digital-rain-404/public/index.html](https://bnema.github.io/nerd-digital-rain-404/public/index.html)
 
 ## Customizing
 
