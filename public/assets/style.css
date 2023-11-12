@@ -63,10 +63,21 @@ button {
     animation: breathing-animation var(--animation-duration) ease-in-out infinite;
 }
 .tld {
-    color: rgba(3, 3, 3, 1);
+    color: rgba(255, 255, 255, 0.02);
     font-size: 10rem;
     z-index: 2;
     cursor: pointer;
+    --min-opacity: 0.5;
+    --animation-duration: 2s;
+    animation: breathing-animation var(--animation-duration) ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+
+    .clickable,
+    .tld {
+        font-size: 5rem;
+    }
 }
 
 button,

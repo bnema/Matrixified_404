@@ -16,7 +16,7 @@ In case JetBrains Mono Nerd Font is not installed on the client or cannot be loa
 ```
 ## Demo
 
-- You can see a 404 demo using only Kakatana symbols on GitHub Pages : [https://bnema.github.io/nerd-digital-rain-404/public/index.html](https://bnema.github.io/nerd-digital-rain-404/public/index.html)
+- You can see a 404 demo using only Kakatana symbols on GitHub Pages : [https://bnema.github.io/nerd-digital-rain/public/index.html](https://bnema.github.io/nerd-digital-rain-404/public/404.html)
 
 ## License
 

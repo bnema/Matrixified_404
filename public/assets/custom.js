@@ -113,8 +113,8 @@
     });
 
 
-function randomizeBreathingAnimation() {
-    const element = document.querySelector('.clickable');
+function randomizeBreathingAnimation(className) {
+    const element = document.querySelector(className);
     if (!element) return; // Exit if element is not found
 
     // Generate random duration between 5 and 30 seconds
@@ -135,4 +135,6 @@ function randomizeBreathingAnimation() {
 }
 
 // Run the function on load
-randomizeBreathingAnimation();
+randomizeBreathingAnimation(".clickable");
+
+randomizeBreathingAnimation(".tld");
