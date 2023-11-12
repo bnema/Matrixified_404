@@ -85,7 +85,7 @@ button,
 .matrix-char {
     position: absolute;
     font-size: 2rem;
-    animation: matrix-animation 1s linear infinite;
+    animation: matrix-animation 2s linear infinite;
     z-index: 3;
 }
 
@@ -108,12 +108,15 @@ button,
 
 @keyframes breathing-animation {
 
-    0%,
-    100% {
+    0% {
         opacity: 1;
     }
 
     50% {
         opacity: var(--min-opacity);
+    }
+
+    100% {
+        opacity: 1;
     }
 }

@@ -7,17 +7,17 @@
     function getRandomColor() {
       return "#" + Math.floor(Math.random() * 16777215).toString(16);
     }
-    // Random interval between 50ms and 1000ms
+    // Random interval between 10ms and 50ms
     function getRandomInterval() {
-      return Math.random() * (10 - 50);
+      return Math.random() * (50 - 100);
     }
     //Function to randomize opacity from 0.1 to 1
     function getRandomOpacity() {
       return Math.random() * (1 - 0.1) + 0.1;
     }
 
-    const MAX_CHARS_DESKTOP = 1000;
-    const MAX_CHARS_MOBILE = 250;
+    const MAX_CHARS_DESKTOP = 500;
+    const MAX_CHARS_MOBILE = 200;
     // Function to create and position a matrix character
     function createMatrixChar() {
       // Create a new span element
@@ -28,18 +28,6 @@
       var nerdFontIconsMisc = String.fromCharCode(getRandomInt(0x1f000, 0x1f9ff));
       var useKatakana = Math.random() > 0.5;
       char.classList.add("matrix-char");
-      // Check if mobile or desktop
-        if (window.innerWidth < 768) {
-            // if mobile then limit the number of characters
-            if (document.querySelectorAll(".matrix-char").length > MAX_CHARS_MOBILE) {
-            return;
-            }
-        } else {
-            // if desktop then limit the number of characters
-            if (document.querySelectorAll(".matrix-char").length > MAX_CHARS_DESKTOP) {
-            return;
-            }
-        }
       // Check if JetBrains Mono Nerd Font is loaded (Hello, GitHub Pages!)
       if (document.fonts.check("1px 'JetBrains Mono Nerd Font'")) {
         // use the 3 different sets of symbols depending on the random value of useKatakana
