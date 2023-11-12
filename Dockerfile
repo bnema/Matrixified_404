@@ -1,17 +1,13 @@
-FROM node:latest
+FROM golang:latest
 
-RUN npm install -g pnpm
-# Create app directory
 WORKDIR /app
 
-# Install app dependencies
-COPY package*.json ./
-
-RUN pnpm install
-
-# Bundle app source
 COPY . .
 
-EXPOSE 3000
+RUN go mod tidy
 
-CMD [ "pnpm", "start" ]
+RUN go build -o main .
+
+CMD [ "./main" ]
+
+# docker buildx build --platform linux/arm64,linux/amd64 -t ghcr.io/bnema/nerd-digital-rain:latest .

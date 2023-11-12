@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@800&display=swap');
+
+/* Nerd Font for the symbols */
+@font-face {
+    font-family: "JetBrains Mono Nerd Font";
+    src: local("JetBrains Mono Nerd Font"), url("/assets/JetBrainsMonoRegularNerdFontComplete.ttf") format("truetype");
+}
+
+/* fire sans */
+
+body {
+    background-color: black;
+    overflow: hidden;
+    /* Use JetBrains Mono Nerd Font or a sans serif font if not available */
+    font-family: "JetBrains Mono Nerd Font", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    z-index: 1;
+}
+
+.fira-sans {
+    font-family: "Fira Sans", sans-serif;
+}
+
+.relative {
+    width: 100%;
+    z-index: 5;
+    gap: 0;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+}
+
+.button-and-span {
+    text-align: center;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.clickable {
+    text-decoration: none;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 4;
+    font-size: 10rem;
+    line-height: 1;
+    height: 0;
+    --animation-duration: 2s;
+    --min-opacity: 0.6;
+    animation: breathing-animation var(--animation-duration) ease-in-out infinite;
+}
+.tld {
+    color: rgba(3, 3, 3, 1);
+    font-size: 10rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+button,
+.spanny
+.alt-text {
+    margin: 0;
+    padding: 0;
+ 
+}
+
+.alt-text {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+}
+.matrix-char {
+    position: absolute;
+    font-size: 2rem;
+    animation: matrix-animation 1s linear infinite;
+    z-index: 3;
+}
+
+/* This animation is used to make the matrix characters fall down */
+@keyframes matrix-animation {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes breathing-animation {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: var(--min-opacity);
+    }
+}
