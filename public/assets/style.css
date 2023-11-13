@@ -60,7 +60,7 @@ button {
     height: 0;
     --animation-duration: 2s;
     --min-opacity: 0.6;
-    animation: breathing-animation var(--animation-duration) ease-in-out infinite;
+    animation: breathing-animation var(--animation-duration) ease-in-out forwards;
 }
 .tld {
     color: rgba(255, 255, 255, 0.02);
@@ -69,7 +69,7 @@ button {
     cursor: pointer;
     --min-opacity: 0.5;
     --animation-duration: 2s;
-    animation: breathing-animation var(--animation-duration) ease-in-out infinite;
+    animation: breathing-animation var(--animation-duration) ease-in-out forwards;
 }
 
 @media screen and (max-width: 768px) {
@@ -130,4 +130,5 @@ button,
     100% {
         opacity: 1;
     }
+
 }

@@ -113,27 +113,39 @@
     });
 
 
+    
 function randomizeBreathingAnimation(className) {
     const element = document.querySelector(className);
-    if (!element) return; // Exit if element is not found
+    if (!element) return;
 
-    // Generate random duration between 5 and 30 seconds
-    const duration = Math.random() * (30 - 5) + 5;
+    const updateAnimation = () => {
+        console.log("updateAnimation");
+        // Round duration using getRandomInterval
+        const duration = getRandomInt(5, 30);
 
-    // Generate random minimum opacity between 0.1 and 0.5
-    const minOpacity = Math.random() * (0.5 - 0.1) + 0.1;
+        // use getRandomColor to get a random color
+        const color = getRandomColor();
 
-    // Update the CSS variable for duration and opacity
-    element.style.setProperty('--animation-duration', `${duration}s`);
-    element.style.setProperty('--min-opacity', minOpacity);
+        // Round minimum opacity to two decimal places using getRandomOpacity
+        const minOpacity = getRandomOpacity();
 
-    // Restart the animation
-    element.style.animation = 'none';
-    setTimeout(() => {
-        element.style.animation = '';
-    }, 10);
+        element.style.setProperty('--animation-duration', `${duration}s`);
+        element.style.setProperty('--min-opacity', minOpacity);
+        element.style.setProperty('color', color);
+        element.style.setProperty('transition', `all ${duration}s ease-in-out`);
+
+        element.style.animation = 'none';
+        setTimeout(() => {
+            element.style.animation = '';
+        }, 10);
+    };
+
+    element.addEventListener('animationend', updateAnimation);
+
+    // Initial call to start the animation
+    updateAnimation();
+    console.log("randomizeBreathingAnimation");
 }
-
 // Run the function on load
 randomizeBreathingAnimation(".clickable");
 
